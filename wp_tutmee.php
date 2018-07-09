@@ -1,11 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: sau
- * Date: 09.07.18
- * Time: 10:48
+ * Plugin Name: WP Tutmee
+ * Plugin URI: http://tutmee.ru
+ * Description: Работает как пакет composer так и как плагин
+ * Version: 1.0.1
+ * Author: Akinay Sau
+ * Author URI: http://a-sau.ru
  */
-
 
 add_action( 'login_head', function () {
 	$path   = __DIR__ . '/assets/logo.png';
