@@ -8,7 +8,12 @@
 
 
 add_action( 'login_head', function () {
-	echo '<style type="text/css">#login h1 a { background: url(' . get_stylesheet_directory_uri() . '/assets/logo.png) no-repeat 0 0 !important; width:187px; height:70px; }</style>';
+	$path   = __DIR__ . '/assets/logo.png';
+	$type   = pathinfo( $path, PATHINFO_EXTENSION );
+	$data   = file_get_contents( $path );
+	$base64 = 'data:image/' . $type . ';base64,' . base64_encode( $data );
+
+	echo '<style type="text/css">#login h1 a { background: url(' . $base64 . ') no-repeat 0 0 !important; width:187px; height:70px; }</style>';
 } );
 add_filter( 'login_headerurl', function () {
 	return "http://tutmee.ru";
